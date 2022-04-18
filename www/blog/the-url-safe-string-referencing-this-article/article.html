@@ -1,0 +1,175 @@
+<!-- Comment syntax -->
+<!-- Specify HTML5 document -->
+<!DOCTYPE html>
+
+<!-- Start of document, specify primary language with "lang" attribute -->
+<html lang="en">
+<!-- Document header -->
+<head>
+<!-- Specify character encoding
+            CAN be declared by serving webserver; explicitly set here
+        -->
+<meta charset="utf-8"/>
+<!-- Title element, appears on tab in browser -->
+<title>title</title>
+<!-- Stylesheet -->
+<style>
+            /*
+                Modify selectors belonging to NAME: .NAME {}
+                Modify selectors belonging to all elem type in NAME: .NAME type {}
+            */
+            body {
+                text-align: left;
+                background-color: #232;
+                color: #bbb;
+            }
+            .grid {
+                width: 900px;
+                position: absolute;
+                display: grid;
+                grid-template-columns: 200px 1fr;
+                column-gap: 5px;
+                left: 50%;
+                top: 30px;
+                transform: translateX(-50%);
+            }
+            .column {
+                background-color: rgba(0,0,0,.2);
+            }
+            .row {
+                background-color: rgba(0,0,0,.2);
+                margin: 5px;
+            }
+            .alert {
+                position: absolute;
+                background-color: rgba(170, 200, 0, 0.150);
+                color: lightyellow;
+                text-align: center;
+                width: 900px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            .icon {
+                height: 140px;
+            }
+            .icon img {
+                padding: 5px;
+                padding-left: 50px;
+            }
+            .page-title {
+                font-size: large;
+                padding-left: 75px;
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+            .article {
+                margin-left: 75px;
+                margin-right: 75px;
+                padding-top: 20px;
+                padding-bottom: 20px;
+            }
+            .article h1, .article h2 {
+                text-align: center;
+            }
+            .article img {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                width: 50%;
+            }
+            .nav, .share {
+                padding-bottom: 10px;
+            }
+            .share {
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+            .nav {
+                padding-top: 5px;
+            }
+            .share-item {
+                text-align: center;
+                font-size: small;
+            }
+            .nav-item {
+                text-align: left;
+                margin-left: auto;
+                margin-right: auto;
+                width: 90%;
+                padding-top: 5px;
+                font-size: small;
+            }
+            .nav-item ul {
+                padding: 0px;
+                margin: 0px 0px 0px 10px; 
+            }
+            a:link {
+                color: inherit;
+            }
+            a:visited {
+                color: inherit;
+            }
+            a:hover {
+                color: white;
+            }
+            a:active {
+                color: inherit;
+            }
+        </style>
+</head>
+<body>
+<!-- Insert parsed motd.md here -->
+<div class="alert"><i>"Important"</i> message of the day here!
+</div>
+<div class="grid">
+<div class="column">
+<div class="row">
+<div class="icon">
+<a href="../../index.html">
+<img src="../../res/me96.gif" title="Home"/>
+</a>
+<div class="share-item">
+                            Ryan Stenmark
+                        </div>
+</div>
+</div>
+<div class="row">
+<div class="share">
+<div class="share-item">
+<a href="https://github.com/rstenmark">GitHub</a>
+</div>
+<div class="share-item">
+<a href="https://linkedin.com/in/ryanstenmark">LinkedIn</a>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="nav">
+<!--
+                        Dynamically append nav-item links to other articles here:
+                        <div class="nav-item">
+                            <a href="index.html">Link text</a>
+                        </div>
+                        -->
+<div class="nav-item"><ul><li><a href="../the-url-safe-string-referencing-this-article/article.html">The long-hand name of this article</a></li></ul></div><div class="nav-item"><ul><li><a href="../definitely-a-real-article/article.html">I swear this isn't another test article</a></li></ul></div></div>
+</div>
+</div>
+<div class="column">
+<div class="row">
+<div class="page-title">
+<!-- "name" in article.json here -->
+<i>The long-hand name of this article</i></div>
+</div>
+<div class="row">
+<div class="article">
+<!-- generated HTML from article.md here -->
+<h1>Big heading</h1>
+<h3>Sub-heading</h3>
+<p><img alt="Resident feline" src="res/cat.gif"/></p>
+<p>This is a paragraph. It's a nice paragraph isn't it? Personally, I hold this
+paragraph in high regard.</p></div>
+</div>
+</div>
+</div>
+</body>
+</html>
