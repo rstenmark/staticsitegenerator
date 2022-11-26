@@ -1,4 +1,4 @@
-#!/usr/bin/python3.9
+#!/usr/bin/python3.11
 
 import os
 import json
@@ -6,16 +6,8 @@ from bs4 import BeautifulSoup
 from markdown import markdown
 from copy import deepcopy
 from time import time
+from _paths import *
 
-BUILD_DIR = "/home/ryan/python/staticsitegenerator/"
-ROOT_DIR = "www/"
-BLOG_DIR = ROOT_DIR + "blog/"
-METADATA = "/article.json"
-MOTD = "motd.html"
-TEMPLATE = "template.html"
-INDEX = "index.html"
-CONTENT_SRC = "/article.md"
-CONTENT_OUT = "/article.html"
 
 def timer(func):
     '''Print millisecond running-time information for decorated function to stdout'''
@@ -62,7 +54,7 @@ def get_motd() -> BeautifulSoup:
         return make_soup(f.read())
 
 @timer
-def get_article_links(for_homepage=False):
+def get_article_links(for_homepage=False) -> BeautifulSoup:
     '''Generates BeautifulSoup object containing links for insertion
     into div type="nav"'''
     soup = BeautifulSoup()
@@ -134,12 +126,12 @@ def build_articles() -> None:
         #date_published = metadata['date-published']
 
         # Write page title to div class="page-title" in italics
-        new_i = soup.new_tag("i")
-        new_i.string = name
-        soup.find("div", "page-title").append(new_i)
+        #new_i = soup.new_tag("i")
+        #new_i.string = name
+        #soup.find("div", "page-title").append(new_i)
 
         # Append MOTD to div class="alert"
-        soup.find("div", "alert").append(deepcopy(motd))
+        # soup.find("div", "alert").append(deepcopy(motd))
 
         # Parse and write article.md into div class="article"
         soup.find("div", "article").append(get_content(page))
@@ -155,7 +147,7 @@ def build_articles() -> None:
 def build_homepage() -> None:
     '''Generates a static home page'''
     soup = get_template()
-    motd = get_motd()
+    # motd = get_motd()
     nav_links = get_article_links(for_homepage=True)
 
     # Fix icon image src and link href
@@ -164,12 +156,12 @@ def build_homepage() -> None:
     icon.img['src'] = "res/me96.gif"
 
     # Write motd
-    soup.find("div", "alert").append(motd)
+    # soup.find("div", "alert").append(motd)
 
     # Write page title
-    new_i = soup.new_tag("i")
-    new_i.string = "Ryan's wicked sick technoblog (name pending)"
-    soup.find("div", "page-title").append(new_i)
+    #new_i = soup.new_tag("i")
+    #new_i.string = "Ryan's wicked sick technoblog (name pending)"
+    #soup.find("div", "page-title").append(new_i)
 
     # Parse and write article.md into div class="article"
     with open(ROOT_DIR + "index.md", 'r') as f:
