@@ -1,4 +1,3 @@
-<!-- Comment syntax -->
 <!-- Specify HTML5 document -->
 <!DOCTYPE html>
 
@@ -20,30 +19,34 @@
             */
             body {
                 text-align: left;
-                background-color: #232;
-                color: #bbb;
+                background-color: #fff;
+                background-image: url("./res/background.gif");
+                background-repeat: repeat;
+                color: black;
             }
             .grid {
                 width: 900px;
                 position: absolute;
                 display: grid;
                 grid-template-columns: 200px 1fr;
-                column-gap: 5px;
+                column-gap: 8px;
                 left: 50%;
-                top: 30px;
                 transform: translateX(-50%);
             }
             .column {
-                background-color: rgba(0,0,0,.2);
+                background-color: #bbb;
+                outline-style: outset;
+                outline-color: black;
+                outline-width: 2px;
             }
             .row {
-                background-color: rgba(0,0,0,.2);
-                margin: 5px;
+                background-color: #fff;
+                margin: 4px;
             }
             .alert {
                 position: absolute;
-                background-color: rgba(170, 200, 0, 0.150);
-                color: lightyellow;
+                background-color: #9af;
+                color: black;
                 text-align: center;
                 width: 900px;
                 left: 50%;
@@ -56,13 +59,16 @@
                 padding: 5px;
                 padding-left: 50px;
             }
+            /*
             .page-title {
                 font-size: large;
-                padding-left: 75px;
+                padding-left: 5%;
                 padding-top: 10px;
                 padding-bottom: 10px;
             }
+            */
             .article {
+                font-size: small;
                 margin-left: 75px;
                 margin-right: 75px;
                 padding-top: 20px;
@@ -119,8 +125,7 @@
 </head>
 <body>
 <!-- Insert parsed motd.md here -->
-<div class="alert"><i>"Important"</i> message of the day here!
-</div>
+<!--<div class="alert"></div>-->
 <div class="grid">
 <div class="column">
 <div class="row">
@@ -151,21 +156,24 @@
                             <a href="index.html">Link text</a>
                         </div>
                         -->
-<div class="nav-item"><ul><li><a href="blog/the-url-safe-string-referencing-this-article/article.html">The long-hand name of this article</a></li></ul></div><div class="nav-item"><ul><li><a href="blog/definitely-a-real-article/article.html">I swear this isn't another test article</a></li></ul></div></div>
+<div class="nav-item"><ul><li><a href="blog/test-test/article.html">test</a></li></ul></div><div class="nav-item"><ul><li><a href="blog/definitely-a-real-article/article.html">I swear this isn't another test article</a></li></ul></div><div class="nav-item"><ul><li><a href="blog/the-url-safe-string-referencing-this-article/article.html">The long-hand name of this article</a></li></ul></div></div>
 </div>
 </div>
 <div class="column">
-<div class="row">
-<div class="page-title">
-<!-- "name" in article.json here -->
-<i>Ryan's wicked sick technoblog (name pending)</i></div>
-</div>
+<!--
+                <div class="row">
+                    <div class="page-title">
+                    </div>
+                </div>
+                -->
 <div class="row">
 <div class="article">
 <!-- generated HTML from article.md here -->
-<h2>About Me</h2>
+<h1>About Me</h1>
 <p><img alt="Me!" src="res/me256.gif"/></p>
-<h4>My name is Ryan Stenmark; I am a self-taught/driven programmer, musician, and general technologist.</h4>
+<h3>Welcome!</h3>
+<p>My name is Ryan Stenmark. I am a 22 year old technologist. One of my strongest passions is working with computers to find solutions to problems.</p>
+<h3>My work</h3>
 <p>This website serves as a showcase of various projects I have worked on. You can find links to individual articles on the left-hand side of the page.</p></div>
 </div>
 </div>
